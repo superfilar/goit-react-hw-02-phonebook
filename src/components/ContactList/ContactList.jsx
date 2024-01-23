@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid';
 
 class ContactList extends Component {
   deleteId = Id => {
@@ -9,7 +8,7 @@ class ContactList extends Component {
   createList = () => {
     return this.props.contacts.map(contact => {
       return (
-        <li key={nanoid()} id={contact.id}>
+        <li key={contact.id} id={contact.id}>
           {`${contact.name}: ${contact.number}`}
           <button
             data-id={contact.id}
